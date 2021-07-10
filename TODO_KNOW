@@ -1,9 +1,26 @@
 server - https://araikuma.tistory.com/453
 nosql
 mongodb crud - https://freestrokes.tistory.com/136
-CRUD에서 Router의 역할은 무엇인가
-Controller의 역할은 무엇인가
-npm init --yes는 뭐지?? 
-npm으로 express를 받을 수 있구만. 그럼 이건 프레임워크야 모듈이야 라이브러리야?
-어떻게 해야 더 나은 개발자를 넘어설 수 있을까
-어떻게 해야 좋은 체계를 만들 수 있을까
+mongoose에 대한 탁월한 설명 - https://velog.io/@ckstn0777/Mongoose-사용하기
+
+npm으로 express를 받을 수 있구만. 그럼 이건 프레임워크야 모듈이야 라이브러리야? -> 모듈인데 프레임워크인 듯
+Controller와 Service Layer 그리고 Data Access Layer 이렇게 나눈다. 여기서 Data Access Layer 역할을 mongoose가 맡는 거 같다.
+그러면 Router는 뭐여. -> Router는 요청을 컨트롤 하는 거 같다. 지금으로썬 그렇게 파악할 수 있겠네. 
+Require는 뭐여. -> 모듈을 얻을 때 Require를 쓰는 구만. 
+const는 왜 붙이는 걸까.
+cors는 무슨 기능일까. corsOptions 가 뭐지.
+restful api는 뭘까. -> 그냥 url을 잘 쓰는 거 같은데. 아 url이랑 uri는 다르다. ㅋㅋㅋㅋㅋ. uri를 잘 써야 하는거네.
+
+body parser는 뭘까. -> body 부분을 읽게 만들어주는 구만
+urlencoded는 뭘까 -> app.use(bodyParser.urlencoded({ extended: true })); 의미는 중첩(extended)를 허용한다는 것. 
+json -> 파일 형식. 그냥 데이터를 표시하는 방법. 
+!!! 결국에 body parser는 request 객체를 다루는 거다. http 모듈로만 이걸 처리하면 복잡하다. body parser가 이걸 가볍게 만들어주는 것. { name: 'seongmin', sex: 'male'} 등의 json 파일을 req.body.name으로 접근 하게 만들어 준다. 와우.
+
+미들웨어는 뭐야. -> req와 res 사이에 작동하는 모든 함수. 생각보다 범위가 넓은 거 같다. 
+mongoose는 뭐야. -> 객체와 데이터간의 연결을 담당하는 ODM(Object Document Mapping) 라이브러리다.
+
+하나하나 작은 개념은 알겠는데, node의 export개념을 혼동하는 게 아닐까 싶다. 뭔가 유기적으로 얽혀있다. 엄청 유기적이다. 나는 지금 뭘 모르는거지? index.js가 server와의 관계. db는 어느 순간에 mongodb를 쓰는거지.
+
+module.exports 이건 모듈을 밖으로 내보내는 건 갑다. 
+
+ㅅㅂ 몽고디비를 어떻게 쓰는거지. 몽고디비를 키고 커넥션을 하는건가. mongo db 자체는 예전 mysql 쓴 거랑 비슷하다. 마리아 디비인가? 아무튼. 이걸 열고 내 웹서버 코드를 연결 할 수 있는 거 같다. 당장은 더 공부가 필요하다. 
