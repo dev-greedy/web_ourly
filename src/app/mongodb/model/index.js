@@ -7,7 +7,7 @@ mongoose.promise = global.promise;
 const db = {}; 
 		db.mongoose = mongoose;
 		db.url = dbConfig.url;
-		db.tutorial = require('./model.js')(mongoose); //이건 형변환인가.
+		db.tutorial = require('./model.js')(mongoose); //이건 형변환인가
 
 module.exports = db;
 
